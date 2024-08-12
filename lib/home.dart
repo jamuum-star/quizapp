@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home(this.switchScreen,{super.key});
 
+  final void Function() switchScreen;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -23,7 +24,7 @@ class Home extends StatelessWidget {
               foregroundColor: const Color.fromARGB(255, 225, 217, 215),
               overlayColor: Colors.orange,
             ),
-            onPressed: (){}, label:const Text('Start Quiz',style: TextStyle(fontSize: 18,),),icon: Icon(Icons.arrow_left),),
+            onPressed: switchScreen, label:const Text('Start Quiz',style: TextStyle(fontSize: 18,),),icon: Icon(Icons.arrow_left),),
         ],
       ),
     );
